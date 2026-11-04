@@ -1,12 +1,26 @@
-/* Controls built by engine.js. Colours come from the page: --ink, --paper, --barbg, --barfg. */
-.sim-select{width:100%;font:600 1rem/1.2 "Schibsted Grotesk",system-ui,sans-serif;color:var(--ink);background:var(--paper);border:1.5px solid var(--ink);border-radius:0;padding:6px 8px}
-.sim-desc{margin:8px 0 10px;font-size:.95rem;line-height:1.35}
-.sim-presets{display:flex;flex-wrap:wrap;gap:5px;margin:0 0 10px}
-.sim-presets button,.sim-actions button,.sim-actions a{font:13px/1 "Departure Mono",ui-monospace,monospace;color:var(--ink);background:var(--paper);border:1.25px solid var(--ink);border-radius:0;padding:6px 7px;cursor:pointer;text-decoration:none}
-.sim-presets button:hover,.sim-actions a:hover{background:var(--barbg);color:var(--barfg)}
-.sim-param{display:grid;grid-template-columns:1fr auto;gap:2px 8px;font-size:.88rem;margin:0 0 7px}
-.sim-param output{font:13px/1.4 "Departure Mono",ui-monospace,monospace}
-.sim-param input{grid-column:1/-1;width:100%;margin:0;accent-color:var(--barbg)}
-.sim-actions{display:flex;gap:6px;margin-top:10px}
-.sim-actions .sim-reload{background:var(--barbg);color:var(--barfg);flex:1;font-size:14px;padding:8px}
-.sim-actions a{display:flex;align-items:center;padding:8px 12px}
+/* Controls built by engine.js: a small sheet of frosted glass over the simulation.
+   Colours come from the page: --ink, --paper, --glass. */
+.win.sim-window{background:var(--glass);-webkit-backdrop-filter:blur(14px) saturate(1.4);backdrop-filter:blur(14px) saturate(1.4);border:1px solid color-mix(in srgb,var(--ink) 16%,transparent);border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.2);color:var(--ink);width:264px}
+.sim-window .bar{display:block;background:transparent;color:var(--ink);font:12px/1 "Departure Mono",ui-monospace,monospace;opacity:.72;padding:10px 12px 0}
+.sim-window .body{padding:7px 12px 12px}
+.sim-select{width:100%;font:600 .95rem/1.2 "Schibsted Grotesk",system-ui,sans-serif;color:var(--ink);background:color-mix(in srgb,var(--paper) 55%,transparent);border:1px solid color-mix(in srgb,var(--ink) 22%,transparent);border-radius:8px;padding:5px 7px}
+.sim-select option{color:var(--ink);background:var(--paper)}
+.sim-desc{margin:6px 0 8px;font-size:.82rem;line-height:1.3}
+.sim-settings summary{font-size:.8rem;font-weight:600;cursor:pointer;padding:2px 0 5px;user-select:none}
+.sim-presets{display:flex;flex-wrap:wrap;gap:4px;margin:0 0 7px}
+.sim-presets button{font:500 .74rem/1 "Schibsted Grotesk",system-ui,sans-serif;color:var(--ink);background:color-mix(in srgb,var(--paper) 45%,transparent);border:1px solid color-mix(in srgb,var(--ink) 22%,transparent);border-radius:99px;min-height:0;padding:4px 8px;cursor:pointer}
+.sim-presets button:hover{background:var(--ink);color:var(--paper)}
+.sim-param{display:grid;grid-template-columns:76px minmax(0,1fr) 44px;align-items:center;gap:7px;font-size:.74rem;line-height:1.1;margin:0 0 5px}
+.sim-param output{font:11px/1 "Departure Mono",ui-monospace,monospace;text-align:right}
+.sim-param input{-webkit-appearance:none;appearance:none;width:100%;height:16px;margin:0;background:transparent;cursor:pointer}
+.sim-param input::-webkit-slider-runnable-track{height:3px;border-radius:3px;background:linear-gradient(to right,var(--ink) var(--pct,50%),color-mix(in srgb,var(--ink) 22%,transparent) var(--pct,50%))}
+.sim-param input::-moz-range-track{height:3px;border-radius:3px;background:color-mix(in srgb,var(--ink) 22%,transparent)}
+.sim-param input::-moz-range-progress{height:3px;border-radius:3px;background:var(--ink)}
+.sim-param input::-webkit-slider-thumb{-webkit-appearance:none;width:11px;height:11px;margin-top:-4px;border-radius:50%;background:var(--ink);border:2px solid var(--paper)}
+.sim-param input::-moz-range-thumb{width:8px;height:8px;border-radius:50%;background:var(--ink);border:2px solid var(--paper)}
+.sim-actions{display:flex;gap:5px;margin-top:8px}
+.sim-reload,.sim-code{font:600 .8rem/1 "Schibsted Grotesk",system-ui,sans-serif;border-radius:8px;min-height:0;padding:7px 10px;cursor:pointer;text-decoration:none}
+.sim-reload{flex:1;background:var(--ink);color:var(--paper);border:1px solid var(--ink)}
+.sim-reload:hover{opacity:.86}
+a.sim-code{color:var(--ink);border:1px solid color-mix(in srgb,var(--ink) 30%,transparent)}
+.sim-window :focus-visible{outline:2px solid var(--ink);outline-offset:2px}

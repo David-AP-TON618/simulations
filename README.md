@@ -1,6 +1,6 @@
 # Simulations
 
-Small simulations that run in the browser and draw themselves in 1-bit dots. Choose one, move its parameters, press Reload.
+Small simulations that run in the browser and draw themselves in 1-bit dots. Choose one, move its parameters, press Reload for a new start and new colours.
 
 Open `index.html`. There is nothing to install or build.
 
@@ -36,6 +36,6 @@ Sims.register({
 });
 ```
 
-The controls come from `params`. The current choice is kept in the address, so a link reopens the same simulation with the same parameters.
+The controls come from `params`. The current choice is kept in the address, so a link reopens the same simulation with the same parameters and colours.
 
 MIT licence.
