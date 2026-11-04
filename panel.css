@@ -1,0 +1,12 @@
+/* Controls built by engine.js. Colours come from the page: --ink, --paper, --barbg, --barfg. */
+.sim-select{width:100%;font:600 1rem/1.2 "Schibsted Grotesk",system-ui,sans-serif;color:var(--ink);background:var(--paper);border:1.5px solid var(--ink);border-radius:0;padding:6px 8px}
+.sim-desc{margin:8px 0 10px;font-size:.95rem;line-height:1.35}
+.sim-presets{display:flex;flex-wrap:wrap;gap:5px;margin:0 0 10px}
+.sim-presets button,.sim-actions button,.sim-actions a{font:13px/1 "Departure Mono",ui-monospace,monospace;color:var(--ink);background:var(--paper);border:1.25px solid var(--ink);border-radius:0;padding:6px 7px;cursor:pointer;text-decoration:none}
+.sim-presets button:hover,.sim-actions a:hover{background:var(--barbg);color:var(--barfg)}
+.sim-param{display:grid;grid-template-columns:1fr auto;gap:2px 8px;font-size:.88rem;margin:0 0 7px}
+.sim-param output{font:13px/1.4 "Departure Mono",ui-monospace,monospace}
+.sim-param input{grid-column:1/-1;width:100%;margin:0;accent-color:var(--barbg)}
+.sim-actions{display:flex;gap:6px;margin-top:10px}
+.sim-actions .sim-reload{background:var(--barbg);color:var(--barfg);flex:1;font-size:14px;padding:8px}
+.sim-actions a{display:flex;align-items:center;padding:8px 12px}

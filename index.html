@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Simulations</title>
+<link rel="stylesheet" href="panel.css">
+<style>
+:root{--ground:#0E7C7B;--on:#fff;--dot:#0B2545;--ink:#0B2230;--paper:#FBFDFC;--barbg:#0B2545;--barfg:#F4FBF8}
+@media (prefers-color-scheme:dark){:root{--ground:#08302F;--on:#D6F2EC;--dot:#2FB5A8;--ink:#E5F6F2;--paper:#123A3C;--barbg:#2FB5A8;--barfg:#06201F}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--on);font:400 17px/1.45 "Schibsted Grotesk",system-ui,sans-serif}
+#stage{position:relative;height:100vh;overflow:hidden}
+#stage canvas{position:absolute;left:0;top:0;display:block;image-rendering:pixelated}
+.win{position:absolute;left:24px;top:24px;width:300px;background:var(--paper);color:var(--ink);border:1.5px solid var(--barbg);box-shadow:3px 3px 0 var(--barbg)}
+.bar{background:var(--barbg);color:var(--barfg);font:14px/1 ui-monospace,monospace;padding:6px 8px}
+.body{padding:12px 14px}
+</style>
+</head>
+<body>
+<div id="stage">
+  <canvas aria-hidden="true"></canvas>
+  <div class="win"><div class="bar" id="title"></div><div class="body" id="panel"></div></div>
+</div>
+<script src="engine.js"></script>
+<script src="sims/gray-scott.js"></script>
+<script src="sims/lenia.js"></script>
+<script src="sims/flow.js"></script>
+<script src="sims/lava.js"></script>
+<script src="sims/brain.js"></script>
+<script src="sims/physarum.js"></script>
+<script src="sims/cyclic.js"></script>
+<script src="sims/ising.js"></script>
+<script src="sims/forest-fire.js"></script>
+<script>
+Sims.mount({
+  stage: document.getElementById('stage'),
+  canvas: document.querySelector('canvas'),
+  panel: document.getElementById('panel'),
+  title: document.getElementById('title'),
+  codeUrl: 'https://github.com/David-AP-TON618/simulations',
+  ink: () => getComputedStyle(document.documentElement).getPropertyValue('--dot').trim(),
+});
+</script>
+</body>
+</html>
